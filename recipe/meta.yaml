@@ -1,5 +1,5 @@
 {% set name = "PySimpleGUIWeb" %}
-{% set version = "0.38.0" %}
+{% set version = "0.39.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0]|lower }}/{{ name|lower }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0b15892d9814c6f1f5a53908a5abe91cf6d16b92a6b054bde3b74796c9b19f38
+  sha256: bf678836226fc8450c965fb209bfb04809bbf6275139aa5a71808b07a3fa32c5
 
 build:
   noarch: python
@@ -25,6 +25,8 @@ requirements:
 test:
   imports:
     - PySimpleGUIWeb
+  requires:
+    - setuptools
 
 about:
   home: https://github.com/PySimpleGUI/PySimpleGUI
