@@ -25,6 +25,7 @@ requirements:
 test:
   imports:
     - PySimpleGUIWeb
+  requires:
     - setuptools
 
 about:
