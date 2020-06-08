@@ -25,6 +25,7 @@ requirements:
 test:
   imports:
     - PySimpleGUIWeb
+    - setuptools
 
 about:
   home: https://github.com/PySimpleGUI/PySimpleGUI
