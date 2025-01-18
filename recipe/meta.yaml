@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0]|lower }}/{{ name|lower }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0]|lower }}/{{ name|lower }}/{{ name }}-{{ version }}.tar.gz
   sha256: bf678836226fc8450c965fb209bfb04809bbf6275139aa5a71808b07a3fa32c5
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.4
+    - python {{ python_min }}
   run:
-    - python >=3.4
+    - python >={{ python_min }}
     - remi
 
 test:
@@ -27,6 +27,7 @@ test:
     - PySimpleGUIWeb
   requires:
     - setuptools
+    - python {{ python_min }}
 
 about:
   home: https://github.com/PySimpleGUI/PySimpleGUI
